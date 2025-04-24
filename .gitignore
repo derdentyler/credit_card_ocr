@@ -1,0 +1,10 @@
+/assets
+/datasets
+logs
+out
+test
+.idea
+.venv
+/YOLOX/*
+!/YOLOX/exps/creditcard/yolox_cc_s.py
+!/YOLOX/data/creditcard.yaml

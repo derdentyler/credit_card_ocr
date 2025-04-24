@@ -1,0 +1,6 @@
+# creditcard.yaml
+train: ../datasets/creditCardDetectionDS/images/train
+val:   ../datasets/creditCardDetectionDS/images/val
+
+nc: 1         # один класс — номер карты
+names: ['card_number']
