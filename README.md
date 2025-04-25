@@ -5,6 +5,20 @@ This project implements an end-to-end pipeline for detecting and reading 16-digi
 
 ## Architecture
 
+### Research
+I've compared three architectures:
+1. **End-to-end OCR** (CRNN on full card)  
+   – Simple but fragile to backgrounds.
+2. **Char-by-char detection + assembly**  
+   – Fine control but complex matching.
+3. **YOLOX-S + OCR on whole number region** (chosen)  
+   – Stable detection, standardized OCR input, fast fine-tuning on real+synthetic.
+
+## Hacks
+- **Synthetic data**: random shadows, varied card colors, random angles/positions.
+- **Logging**: TensorBoard; per-epoch checkpoints.
+- **OCR**: EasyOCR integration in infer.py.
+
 ### Modules
 
 - **src/data_loader/**
@@ -126,7 +140,7 @@ tensorboard --logdir runs
 ```
 
 ## Plans
-- Small bugfix
+- Small bugfix and refactoring
 - Model train
 - Handle bench-mark with Card Number (on creditCardDetectionDS only borders exists)
 - Add MLFlow for experiment serving
