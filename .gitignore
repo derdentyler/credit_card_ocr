@@ -4,6 +4,7 @@
 /logs/
 /out/
 /test/
+**/__pycache__/
 
 # ================ YOLOX ================
 /YOLOX/weights              # Игнорировать веса в папке YOLOX
