@@ -21,9 +21,7 @@ This project implements an end-to-end pipeline for detecting and reading 16-digi
   - `yolox_cc_s.py` – YOLOX “Exp” file defining model architecture, data loaders (using `CreditCardDataset`), and training schedule.
 
 - **YOLOX/data/**
-  - `creditcard.yaml` – Config for real data.
-  - `creditcard_synth.yaml` – Config for synthetic-data-only training.
-  - `creditcard_mix.yaml` – Config for mixed synthetic + real data training.
+  - `creditcard.yaml` – Config for real data (only creditCardDetectionDS ~800 examples).
 
 - **scripts/**
   - `visualize_boxes.py` – Tool to overlay YOLO-format boxes on images.
@@ -89,7 +87,13 @@ python YOLOX/tools/train.py ^
   --opts data_dir=YOLOX/data/creditcard.yaml max_epoch=20
 ```
 
-## Best way Train (to do)
+## Best way Train (to Plans)
+
+Need to add:
+  - `creditcard_synth.yaml` – Config for synthetic-data-only training.
+  - `creditcard_mix.yaml` – Config for mixed synthetic + real data training.
+
+
 ### Stage 1: Synthetic-only
 ```cmd
 set CUDA_VISIBLE_DEVICES=-1
@@ -121,22 +125,14 @@ Run during training with `--logger tensorboard`; view with:
 tensorboard --logdir runs
 ```
 
-### MLflow integration
-1. **Install** (added to `requirements.txt`):  
-   ```bash
-   pip install mlflow
-   ```
-2. **Start tracking server**:
-   ```bash
-   mlflow ui --backend-store-uri ./mlruns
-   ```
-3. **Log experiments**: use `--logger mlflow` in training commands.
-
 ## Plans
 - Small bugfix
-- Unit tests
+- Model train
+- Handle bench-mark with Card Number (on creditCardDetectionDS only borders exists)
+- Add MLFlow for experiment serving
 - Provide REST API for real-time inference
 - Add Docker support
+- Unit tests
 
 ## Contact
 For any questions or suggestions, feel free to reach out: 📧 [alexander.polybinsky@gmail.com]()
