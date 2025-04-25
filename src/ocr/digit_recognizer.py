@@ -9,13 +9,12 @@ class DigitRecognizer:
         :param gpu: True для использования GPU, False — CPU only.
         """
         langs = languages or ['en']
-        self.reader = easyocr.Reader(langs, gpu=gpu)  # :contentReference[oaicite:2]{index=2}
+        self.reader = easyocr.Reader(langs, gpu=gpu)
 
     def recognize(self, img: Image.Image) -> str:
         """
         Выполняет OCR на изображении с помощью EasyOCR и возвращает все цифры подряд.
         """
-        # EasyOCR принимает numpy array
         arr = np.array(img)
         results = self.reader.readtext(arr, detail=0, allowlist='0123456789')
         # detail=0 возвращает сразу строки без bbox/конфидэнс

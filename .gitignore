@@ -1,10 +1,35 @@
-/assets
-/datasets
-logs
-out
-test
-.idea
-.venv
-/YOLOX/*
-!/YOLOX/exps/creditcard/yolox_cc_s.py
-!/YOLOX/data/creditcard.yaml
+# ================ Папки проекта ================
+/assets/
+/datasets/
+/logs/
+/out/
+/test/
+
+# ================ YOLOX ================
+/YOLOX/weights              # Игнорировать веса в папке YOLOX
+
+# ================ Python ================
+__pycache__/           # Кэш байт-кода
+*.py[cod]              # Временные файлы Python
+*.so                   # Скомпилированные расширения
+*.egg-info/            # Метаданные пакетов
+.ipynb_checkpoints/    # Кэш Jupyter
+
+# ================ Виртуальные окружения ================
+.venv/
+venv/
+env/
+ENV/
+
+# ================ IDE ================
+.idea/
+.vscode/
+*.iml
+*.code-workspace
+
+# ================ Логи и системные файлы ================
+*.log
+*.sqlite
+*.dump
+.DS_Store              # Файлы macOS
+Thumbs.db              # Кэш проводника Windows

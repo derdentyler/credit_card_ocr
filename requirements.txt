@@ -14,8 +14,8 @@ tensorboard
 #project
 easyocr
 pillow
-numpy
 pyyaml
+matplotlib
 
 # verified versions
 # pycocotools corresponds to https://github.com/ppwwyyxx/cocoapi
