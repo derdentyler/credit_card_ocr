@@ -1,7 +1,7 @@
 # Credit Card OCR
 
 ## Description
-This project implements an end-to-end pipeline for detecting and reading 16-digit credit card numbers from images. It uses YOLOX-S for region detection and EasyOCR for digit recognition. Both real (CreditCardDetectionDS) and synthetic data are supported.
+This project implements an end-to-end pipeline for detecting and reading 16-digit credit card numbers from images. It uses YOLOX for region detection and EasyOCR for digit recognition. Both real (CreditCardDetectionDS) and synthetic data are supported.
 
 ## Architecture
 
@@ -11,7 +11,7 @@ I've compared three architectures:
    – Simple but fragile to backgrounds.
 2. **Char-by-char detection + assembly**  
    – Fine control but complex matching.
-3. **YOLOX-S + OCR on whole number region** (chosen)  
+3. **YOLOX + OCR on whole number region** (chosen)  
    – Stable detection, standardized OCR input, fast fine-tuning on real+synthetic.
 
 ## Hacks
@@ -140,7 +140,6 @@ tensorboard --logdir runs
 ```
 
 ## Plans
-- Small bugfix and refactoring
 - Model train
 - Handle bench-mark with Card Number (on creditCardDetectionDS only borders exists)
 - Add MLFlow for experiment serving
