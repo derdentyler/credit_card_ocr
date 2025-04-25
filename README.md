@@ -47,9 +47,8 @@ I've compared three architectures:
 - **Synthetic data generation** with `synthetic_generator.py`: card positioning, rounded corners, shadows, font sizing, and basic augmentations.
 - **Logging** implemented with TensorBoard and optional MLflow (see below).
 
-## What Has Not Been Done
-- Full multi-stage training: due to time constraints, model has not been trained end-to-end.  
-  Intended two-stage schedule:
+## Awaiting future action
+- Full multi-stage training. Intended two-stage schedule:
   1. Pre-train on synthetic data (`YOLOX/data/creditcard_synth.yaml`).
   2. Fine-tune on synthetic + real data (`YOLOX/data/creditcard_mix.yaml`).
 - Experiment tracking server (MLflow) not yet fully set up; integration steps provided below.
