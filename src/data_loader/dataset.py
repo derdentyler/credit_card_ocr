@@ -64,9 +64,11 @@ class CreditCardDataset(Dataset):
 
         # Парсим выбранный бокс
         _, xc, yc, bw, bh = map(float, chosen.split())
-        xc, yc, bw, bh = xc * w, yc * h, bw * w, bh * h
-        x1, y1 = xc - bw/2, yc - bh/2
-        x2, y2 = xc + bw/2, yc + bh/2
+        xc, yc, bw, bh = xc, yc, bw, bh
+        x1 = xc - bw / 2
+        y1 = yc - bh / 2
+        x2 = xc + bw / 2
+        y2 = yc + bh / 2
 
         boxes = torch.tensor([[x1, y1, x2, y2]], dtype=torch.float32)
         labels = torch.zeros((1,), dtype=torch.int64)  # единственный класс

@@ -5,7 +5,7 @@ def visualize(image_path, label_path, out_path=None):
     """
     Рисует все боксы из label_path на image_path,
     подписывая каждый: [idx:class_id].
-    Третий (index 2) элемент класса 2 выделяется жёлтым.
+    Четвертый (index 3) элемент класса 2 выделяется жёлтым.
     """
     img = Image.open(image_path).convert("RGB")
     draw = ImageDraw.Draw(img)
